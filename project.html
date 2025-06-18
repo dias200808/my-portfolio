@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>portfolio1</title>
+  <link href="style.css" rel="stylesheet">
+  
+</head>
+<body>
+  <img id="beauty" src="emblema.png" alt="My Logo">
+  <div id="top-bar">
+    <img id="logo" src="emblema.png" alt="My Logo">
+    <div class="nav-links">
+        <a href="Main.html" class="nav-link1">Main</a>
+        <a href="project.html" class="nav-link1">Project</a>
+        <a href="contact.html" class="nav-link1">Contact</a>
+        <a href="skill.html" class="nav-link1">Skill</a>
+    </div>
+    
+  </div>
+<section class="project-row">
+ <div class="project-wrapper">
+  <div class="project-block">
+    <div class="project-text">
+      <h3>IQanat Olympiad</h3>
+      <p>Participation and mentoring in the national IQanat Olympiad, representing rural talents in STEM.</p>
+    </div>
+    <img src="iqanat.png" alt="IQanat Olympiad">
+  </div>
+
+  <div class="project-block reverse">
+    <div class="project-text">
+      <h3>My Extra Case</h3>
+      <p>Developed creative tech solutions in Kazakhstan’s MyExtraCase competition — focused on education and health.</p>
+    </div>
+    <img src="myextra.png" alt="My Extra Case">
+  </div>
+
+  <div class="project-block">
+    <div class="project-text">
+      <h3>FIRST Tech Challenge (FTC)</h3>
+      <p>As Team RED LOTUS, we compete in FTC, designing and building autonomous robots to solve engineering missions.</p>
+    </div>
+    <img src="ftc.png" alt="FTC">
+  </div>
+
+  <div class="project-block reverse">
+    <div class="project-text">
+      <h3>Solve for Tomorrow</h3>
+      <p>National finalist in Samsung's Solve for Tomorrow challenge — combining social impact and tech innovation.</p>
+    </div>
+    <img src="solve.png" alt="Solve for Tomorrow">
+  </div>
+ </div>
+</section>
+
+  <script>
+    function moveToCenter(clickedCard) {
+      const cards = Array.from(document.querySelectorAll('.card'));
+      cards.forEach(card => card.classList.remove('left', 'center', 'right'));
+
+      if (clickedCard === cards[0]) {
+        cards[0].classList.add('center');
+        cards[1].classList.add('right');
+        cards[2].classList.add('left');
+      } else if (clickedCard === cards[1]) {
+        cards[1].classList.add('center');
+        cards[2].classList.add('right');
+        cards[0].classList.add('left');
+      } else {
+        cards[2].classList.add('center');
+        cards[0].classList.add('right');
+        cards[1].classList.add('left');
+      }
+    }
+    const links = document.querySelectorAll('.nav-link1');
+    const currentUrl = window.location.pathname;
+
+    links.forEach(link => {
+      if (link.getAttribute('href') === currentUrl.split('/').pop()) {
+        link.classList.add('active');
+      }
+});
+
+  </script>
+</body>
+</html>
